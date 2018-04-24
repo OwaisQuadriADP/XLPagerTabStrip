@@ -238,6 +238,10 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         }
     }
     
+    open func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController) {
+        // nothing
+    }
+    
     // MARK: - UICollectionViewDelegateFlowLayut
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {

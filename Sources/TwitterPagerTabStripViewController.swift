@@ -112,6 +112,10 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
         fatalError()
     }
     
+    open func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController) {
+        // nothing
+    }
+    
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         guard object as AnyObject === titleView && keyPath == "frame" && change?[NSKeyValueChangeKey.kindKey] as? UInt == NSKeyValueChange.setting.rawValue else { return }
         
