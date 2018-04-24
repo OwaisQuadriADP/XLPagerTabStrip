@@ -192,6 +192,10 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
             changeCurrentIndexProgressive(oldCell, newCell, progressPercentage, indexWasChanged, true)
         }
     }
+    
+    open func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController) {
+        // nothing
+    }
 
     // MARK: - UICollectionViewDelegateFlowLayut
 

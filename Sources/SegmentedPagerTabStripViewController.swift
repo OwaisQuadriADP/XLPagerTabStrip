@@ -101,7 +101,11 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
             segmentedControl.selectedSegmentIndex = toIndex
         }
     }
-
+    
+    open func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController) {
+        // nothing
+    }
+    
     // MARK: - UIScrollViewDelegate
 
     open override func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {

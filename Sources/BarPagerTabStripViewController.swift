@@ -95,4 +95,9 @@ open class BarPagerTabStripViewController: PagerTabStripViewController, PagerTab
     open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
         barView.moveTo(index: toIndex, animated: true)
     }
+    
+    open func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController) {
+        // nothing
+    }
+    
 }
