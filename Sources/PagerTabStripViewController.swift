@@ -36,6 +36,13 @@ public protocol PagerTabStripDelegate: class {
 
     func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int)
     func pagerTabStrip(_ pagerTabStrip: PagerTabStripViewController, didMoveTo viewController: UIViewController)
+    func pagerTabStripLoadedViewControllers(_ pagerTabStrip: PagerTabStripViewController)
+}
+
+public extension PagerTabStripDelegate {
+    func pagerTabStripLoadedViewControllers(_ pagerTabStrip: PagerTabStripViewController) {
+        // do nothing
+    }
 }
 
 public protocol PagerTabStripIsProgressiveDelegate: PagerTabStripDelegate {
@@ -110,6 +117,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         childController.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         containerView.addSubview(childController.view)
         childController.didMove(toParentViewController: self)
+        delegate?.pagerTabStripLoadedViewControllers(self)
     }
 
     open override func viewWillAppear(_ animated: Bool) {
@@ -303,6 +311,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         preCurrentIndex = currentIndex
         containerView.contentOffset = CGPoint(x: pageOffsetForChild(at: currentIndex), y: 0)
         updateContent()
+        delegate?.pagerTabStripLoadedViewControllers(self)
     }
 
     // MARK: - UIScrollViewDelegate
