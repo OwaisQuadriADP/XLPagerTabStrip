@@ -366,6 +366,10 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         guard scrollView == containerView else { return }
         shouldUpdateButtonBarView = true
     }
+    
+    open override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        super.scrollViewDidEndDecelerating(scrollView)
+    }
 
     open func configureCell(_ cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
     }
